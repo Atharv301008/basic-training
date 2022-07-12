@@ -1,17 +1,19 @@
-function secondLargest(arr){
-    let first = -1 , second = -1;
+function secondlargestele(arr){
+    let largestnum = arr[0];
+    let secondlargest = arr[0];
 
-    for(let i = 0; i <= arr.length-1; i++){
-        if(arr[i] > first){
-            second = first;
-            first = arr[i];
-        }
-        else if( arr[i] > second && arr[i] != first){
-            second = arr[i];
+    for (let i=0; i<arr.length; i++){
+        if (arr[i] > largestnum){
+            secondlargest = largestnum;
+            largestnum = aarr[i]; 
+        }else if (arr[i] > secondlargest){
+            secondlargest = arr[i];
         }
     }
-    console.log(second);
-}
-let arr = [12, 35, 1, 10, 34, 1]
-secondLargest(arr);
 
+    return secondlargest;
+
+}
+
+let arr = [1,2,3,4,5,6,7,8]
+secondlargestele(arr)
