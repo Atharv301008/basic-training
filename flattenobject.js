@@ -8,7 +8,7 @@ const enrollment = {
   }
 
   function flatten(unflatobject){
-    const u = {...unflatobject.user};
+    const u = {unflatobject.user};
     for(let i in unflatobject){
       if(i !== 'user')u[i] = unflatobject[i];
     }
