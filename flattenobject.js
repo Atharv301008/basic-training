@@ -1,19 +1,24 @@
-const enrollment = {
-    user: {
-      id: 'string',
-      name: 'string'
-    },
-    finished: 'boolean',
-    path: 'boolean'
-  }
-
-  function flatten(unflatobject){
-    const u = {unflatobject.user};
-    for(let i in unflatobject){
-      if(i !== 'user')u[i] = unflatobject[i];
+var obj = {
+    name: "varun",
+    age: 22,
+    address:{
+        city: "patna",
+        pin: 11234
     }
-    return u;
-  }
+}
 
-  const user = flatten(enrollment);
-  console.log(user);
+function flattenobj(obj){
+    
+    let result = {}
+    for (i in obj){
+        if(typeof obj[i] === 'object'){
+            const temp=flattenobj(obj[i])
+            for(j in temp){
+                result[i+"-"+j] = temp[j]
+            }
+        }
+        else{
+            result[i]=obj[i]
+        }
+    }
+}
